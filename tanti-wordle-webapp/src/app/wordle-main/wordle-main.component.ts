@@ -1,4 +1,4 @@
-import { getTestBed } from '@angular/core/testing';
+import { WordValidation } from '../shared/models/word-validation';
 import { TantiWordleApiService } from './../shared/services/tanti-wordle-api.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,14 +8,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./wordle-main.component.css'],
 })
 export class WordleMainComponent implements OnInit {
-  word: string = '';
+  targetWord: string = '';
+  wordValidation: WordValidation;
   randomWordLenght: number = 5;
 
   constructor(private tantiWordleApiService: TantiWordleApiService) {}
 
   ngOnInit() {
+    // TODO: add loading spinning
     this.tantiWordleApiService
       .getRandomWord(this.randomWordLenght)
-      .subscribe((value) => (this.word = value));
+      .subscribe((value) => {
+        this.targetWord = value
+      });
+    this.wordValidation = new WordValidation(this.randomWordLenght);
+  }
+
+  validateWord(wordToValidate: string): void {
+    this.tantiWordleApiService.getWordValidation(wordToValidate, this.targetWord)
+      .subscribe((value) => {
+        this.wordValidation = value;
+      });
   }
 }
