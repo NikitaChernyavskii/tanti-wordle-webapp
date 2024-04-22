@@ -11,11 +11,12 @@ export class WordleMainComponent implements OnInit {
   targetWord: string = '';
   wordValidation: WordValidation;
   randomWordLenght: number = 5;
+  maxTryCount: number = 5;
 
   constructor(private tantiWordleApiService: TantiWordleApiService) {}
 
   ngOnInit() {
-    // TODO: add loading spinning
+    // TODO: add loading spinning?
     this.tantiWordleApiService
       .getRandomWord(this.randomWordLenght)
       .subscribe((value) => {
