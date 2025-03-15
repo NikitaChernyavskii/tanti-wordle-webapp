@@ -1,0 +1,8 @@
+.keyboard-container {
+  max-width: 340px;
+
+  .keyboard-line {
+    display: flex;
+    justify-content: center;
+  }
+}

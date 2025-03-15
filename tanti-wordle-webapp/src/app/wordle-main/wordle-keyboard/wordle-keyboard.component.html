@@ -1,0 +1,27 @@
+
+
+<div class="keyboard-container">
+  <div
+    ngClass="keyboard-line"
+    *ngFor="let keysLine of keyboard; index as i">
+      <button *ngIf="i===2"
+        mat-button
+        (click)="onDeleteKeyPressed()"
+      >
+        DEL
+      </button>
+      <button
+        mat-button
+        *ngFor="let key of keysLine"
+        (click)="onLetterKeyPressed(key)"
+      >
+        {{key}}
+      </button>
+      <button *ngIf="i===2"
+        mat-button
+        (click)="onEnterKeyPressed()"
+      >
+        ENTER
+      </button>
+  </div>
+</div>
