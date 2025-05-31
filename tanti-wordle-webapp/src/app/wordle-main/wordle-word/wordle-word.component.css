@@ -1,0 +1,8 @@
+.word-grid {
+    margin-bottom: 2px;
+    max-width: 340px;
+
+    .mat-grid-tile {
+        border: solid 1px #000;
+    }
+}

@@ -1,0 +1,12 @@
+<div class="word-grid" *ngIf="!!wordValidation">
+  <mat-grid-list
+    cols="{{ wordValidation.characterValidations.length }}"
+    rowHeight="20px"
+  >
+    <mat-grid-tile
+      *ngFor="let character of wordValidation.characterValidations"
+      [style.background]="getGridTileBackgroundColor(character.status)"
+      >{{ character.character }}</mat-grid-tile
+    >
+  </mat-grid-list>
+</div>

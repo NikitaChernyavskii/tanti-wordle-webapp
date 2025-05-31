@@ -21,10 +21,12 @@ export class WordleKeyboardComponent implements OnInit {
   ngOnInit() {}
 
   onLetterKeyPressed(letter: string): void {
-    console.log(letter);
+    this.letterKeyPressed.emit(letter);
   }
 
   onDeleteKeyPressed(): void {}
 
-  onEnterKeyPressed(): void {}
+  onEnterKeyPressed(): void {
+    this.enterKeyPressed.emit();
+  }
 }

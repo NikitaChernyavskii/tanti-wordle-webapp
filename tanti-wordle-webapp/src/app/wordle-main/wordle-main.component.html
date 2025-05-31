@@ -1,5 +1,13 @@
 <p>
-  wordle-main works!
   Random word test - value is '{{targetWord}}'
+  Is game over - {{isGameOver ? 'YES' : 'NO'}}
 </p>
-<app-wordle-keyboard></app-wordle-keyboard>
+<app-wordle-word
+  *ngFor="let wordValidation of wordValidations"
+  [wordValidation]="wordValidation"
+></app-wordle-word>
+<app-wordle-keyboard
+  (letterKeyPressed) = "onLetterKeyPressed($event)"
+  (enterKeyPressed) = "onEnterKeyPressed()"
+>
+</app-wordle-keyboard>

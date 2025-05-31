@@ -9,15 +9,18 @@ import { TantiWordleApiService } from './shared/services/tanti-wordle-api.servic
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WordleKeyboardComponent } from './wordle-main/wordle-keyboard/wordle-keyboard.component';
 import { MatIconModule } from '@angular/material/icon';
+import { WordleWordComponent } from './wordle-main/wordle-word/wordle-word.component';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
-  declarations: [AppComponent, WordleMainComponent, WordleKeyboardComponent],
+  declarations: [AppComponent, WordleMainComponent, WordleKeyboardComponent, WordleWordComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
     MatIconModule,
+    MatGridListModule,
   ],
   providers: [TantiWordleApiService],
   bootstrap: [AppComponent],

@@ -1,7 +1,7 @@
 import { CharacterValidation } from './character-validation';
 
 export class WordValidation {
-  characterValidations: CharacterValidation[];
+  characterValidations: Array<CharacterValidation>;
 
   constructor(lenght: number) {
     this.characterValidations = new Array<CharacterValidation>(lenght);
